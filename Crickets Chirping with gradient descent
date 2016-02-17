@@ -8,27 +8,31 @@ y = data(:,1);
 
 
 % Create a function to plot the data
-function plotData(x,y)
+ function plotData(x,y)
 plot(x,y,'rx','MarkerSize',8); % Plot the data
 xlabel('Rate of Cricket Chirping'); % Set the x-axis label
 ylabel('Temperature in Degrees Fahrenheit'); % Set the y-axis label
 legend('Training data', 'Linear regression')
 title('Chirping over deg F')
 end
-% Plot the data
+ Plot the data
 plotData(x,y);
 
-fprintf('Program paused. Press enter to continue.\n');
-pause;
-
+%fprintf('Program paused. Press enter to continue.\n');
+%pause;
 
 % Count how many data points we have
 m = length(x);
 % Add a column of all ones (intercept term) to x
 X = [ones(m, 1) x];
 
+need to arbitrarily set theta
+need to input cost function J(theta) 
+need to write both if function to simultaneously update both theta(1) = what is the intercept and theta(2) how much for each degree
+
+
 % Calculate theta with normal equation
-theta = (pinv(X'*X))*X'*y
+%theta = (pinv(X'*X))*X'*y
 
 % Plot the fitted equation we got from the regression
 hold on; % this keeps our previous plot of the training data visible
